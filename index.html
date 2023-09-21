@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sus</title>
+
+  <style>
+    h1 {
+      color: green;
+    }
+  </style>
+
+  <script>
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        const ipAddress = data.ip;
+        document.getElementById("target").innerHTML = `anyways your IP address is <h3 id="ip">${ipAddress}</ip>`
+      })
+      .catch(error => {
+        document.getElementById("target").innerHTML = `anyways your IP address is... oh... are you using a VPN or some shit? I can't get your IP... well... touché`
+      });
+  </script>
+</head>
+
+<body>
+  <style>
+    html {
+      background-color: black;
+    }
+
+    h3 {
+      font-family: courier new;
+      color: white;
+      margin: 40px;
+      vertical-align: middle;
+    }
+    #ip {
+      color: lime;
+    }
+  </style>
+    <h3>bro why'd you click the link, that's super sus</h3>
+    <h3 id="target">anyways your IP address is </h3>
+
+</body>
+
+</html>
